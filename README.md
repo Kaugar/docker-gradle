@@ -15,7 +15,7 @@ provided it has 64bit architecture and OS, et least 4GB (**8GB is recomended**) 
 
 ## Pull the image from dockerhub:
 ```
-docker pull huli/gradle
+docker pull huli-gradle
 ```
 ### Clone the github repository
 
