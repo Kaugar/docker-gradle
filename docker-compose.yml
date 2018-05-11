@@ -1,0 +1,28 @@
+version: '3'
+services:
+  mariadb-container:
+    image: mariadb:latest
+    container_name: mariadb-container
+    restart: always
+    environment:
+      MYSQL_USER: root
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_PASSWORD: 12345
+      MYSQL_DATABASE: message
+    expose:
+      - 3306
+    
+  gradle-container:
+    image: huli-gradle:latest
+    container_name: gradle-container
+    environment:
+      JDBC_DATABASE_URL: jdbc:mysql://mariadb-container/message
+      JDBC_DATABASE_USERNAME: root
+      JDBC_DATABASE_PASSWORD: 12345
+    depends_on:
+      - mariadb-container
+    ports:
+      - 8080:8080
+    volumes:
+      - .:/root/
+    tty: true
