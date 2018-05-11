@@ -1,6 +1,4 @@
-FROM frekele/java:jdk8
-
-MAINTAINER frekele <leandro.freitas@softdevelop.com.br>
+FROM java:8
 
 ENV GRADLE_VERSION=4.6
 ENV GRADLE_HOME=/opt/gradle
@@ -23,10 +21,10 @@ RUN update-alternatives --install "/usr/bin/gradle" "gradle" "/opt/gradle/bin/gr
 RUN mkdir -p $GRADLE_FOLDER
 
 # Mark as volume
-VOLUME  -v Users/martinweltler/Desktop/greenfox/docker-poject:/root/
+VOLUME  $GRADLE_FOLDER
 
 # Add the files
-ADD Users/martinweltler/Desktop/greenfox/huli-spring /root/ 
+ADD . /root/
 
 # Change to root folder
 WORKDIR /root/
