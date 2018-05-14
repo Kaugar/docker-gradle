@@ -19,7 +19,7 @@ docker pull laszlobrhlik/huli-spring:latest
 ```
 ### Clone the github repository
 
-https://github.com/greenfox-academy/devops/huli-spring
+https://github.com/greenfox-academy/Huli/huli-spring-gradle
 
 ### run the sample app
 Go inside the folder of the demo and run:
