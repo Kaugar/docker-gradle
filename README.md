@@ -15,7 +15,7 @@ provided it has 64bit architecture and OS, et least 4GB (**8GB is recomended**) 
 
 ## Pull the image from dockerhub:
 ```
-docker pull huli-gradle
+docker pull laszlobrhlik/huli-spring:latest
 ```
 ### Clone the github repository
 
@@ -34,7 +34,15 @@ Step in your running gradle-container
 ```
 docker exec -it gradle-container /bin/bash
 ```
-Step into the sample application
+make 'firstrun.sh' executable
+```
+chmod +x firstrun.sh
+```
+run 'firstrun.sh' to copy java spring gradle starter app to bind mounted volume
+```
+./firstrun.sh
+```
+Get into 'huli-spring' starter app
 ```
 cd huli-spring
 ```

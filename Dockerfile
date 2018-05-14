@@ -20,11 +20,14 @@ RUN update-alternatives --install "/usr/bin/gradle" "gradle" "/opt/gradle/bin/gr
 # Create .gradle folder
 RUN mkdir -p $GRADLE_FOLDER
 
+# Create greenfox folder
+RUN mkdir -p greenfox
+
 # Mark as volume
 VOLUME  $GRADLE_FOLDER
 
-# Add the files
-ADD . /root/
+# Copy the files
+COPY . /tmp/greenfox
 
 # Change to root folder
-WORKDIR /root/
+WORKDIR /greenfox/
